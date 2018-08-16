@@ -10,7 +10,7 @@ app.get('/api/account', handleAccount);
 app.get('/api/flashes', handleFlashes);
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'dist/flash-invaders-helper/index.html'));
+	res.sendFile(path.join(__dirname, 'dist/flash-invaders-helper/index.html'));
 });
 app.get('/*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'dist/flash-invaders-helper/', req.url));
