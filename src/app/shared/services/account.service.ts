@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { IAccount } from '../interfaces/account.interface';
 
 @Injectable()
 export class AccountService {
 
-    private URI = 'http://space-invaders.com/api/account/';
+    private URI = 'api/account/';
 
     constructor(
         private http: HttpClient
@@ -15,9 +15,7 @@ export class AccountService {
     public query(uuid: string): Observable<IAccount> {
         const params = new HttpParams()
             .append('uid', uuid);
-        const headers = new HttpHeaders()
-            .append('Access-Control-Allow-Origin', '*');
 
-        return this.http.get<IAccount>(this.URI, { headers, params });
+        return this.http.get<IAccount>(this.URI, { params });
     }
 }

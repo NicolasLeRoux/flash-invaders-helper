@@ -1,9 +1,14 @@
 import path from 'path';
 import express from 'express';
+import { handleAccount, handleFlashes } from './api/flash-invaders';
 
 const __dirname = path.resolve();
 
 const app = express();
+
+app.get('/api/account', handleAccount);
+app.get('/api/flashes', handleFlashes);
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'dist/flash-invaders-helper/index.html'));
 });
