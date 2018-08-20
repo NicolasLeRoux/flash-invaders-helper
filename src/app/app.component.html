@@ -1,14 +1,16 @@
-<div id="main-container">
-  <mat-toolbar>
-    <button mat-icon-button (click)="sidenav.toggle()">menu</button>
-    <span>My Application</span>
-  </mat-toolbar>
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav>
-      Start
-    </mat-sidenav>
-    <mat-sidenav-content>
-      Main
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</div>
+<mat-sidenav-container class="app-container">
+  <mat-sidenav #sidenav
+               class="app-sidenav">
+    Hello world !
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary"
+                 class="app-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon svgIcon="menu"></mat-icon>
+      </button>
+      <h1 class="example-app-name">FIHelper</h1>
+    </mat-toolbar>
+    <div id="app-map"></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
